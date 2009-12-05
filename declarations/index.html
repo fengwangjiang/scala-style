@@ -44,6 +44,44 @@
             
   <div class="section" id="declarations">
 <h1>Declarations<a class="headerlink" href="#declarations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<p>Class/Object/Trait constructors should be declared all on one line, unless
+the line becomes &#8220;too long&#8221; (about 100 characters).  In that case, put each
+constructor argument on its own line, indented <strong>four</strong> spaces:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
+  <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+  <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">birthdate</span><span class="k">:</span> <span class="kt">Date</span><span class="o">,</span>
+  <span class="n">astrologicalSign</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+  <span class="n">shoeSize</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">favoriteColor</span><span class="k">:</span> <span class="kt">java.awt.Color</span><span class="o">)</span> <span class="o">{</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>If a class/object/trait extends anything, the same general rule applies, put
+it one one line unless it goes over about 100 characters, and then indent <strong>two</strong>
+spaces with each item being on its own line; this provides visual separation
+between constructor arguments and extensions.:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
+  <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+  <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">birthdate</span><span class="k">:</span> <span class="kt">Date</span><span class="o">,</span>
+  <span class="n">astrologicalSign</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+  <span class="n">shoeSize</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">favoriteColor</span><span class="k">:</span> <span class="kt">java.awt.Color</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">Entity</span>
+    <span class="k">with</span> <span class="nc">Logging</span>
+    <span class="k">with</span> <span class="nc">Identifiable</span>
+    <span class="k">with</span> <span class="nc">Serializable</span> <span class="o">{</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="section" id="ordering-of-class-elements">
+<h3>Ordering Of Class Elements<a class="headerlink" href="#ordering-of-class-elements" title="Permalink to this headline">¶</a></h3>
 <p>All class/object/trait members should be declared interleaved with newlines.
 The only exceptions to this rule are <tt class="docutils literal"><span class="pre">var</span></tt> and <tt class="docutils literal"><span class="pre">val</span></tt>.  These may be declared
 without the intervening newline, but only if none of the fields hava scaladoc
@@ -81,6 +119,8 @@ declarations are strewn throughout class file.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
 
 
           </div>
@@ -88,6 +128,19 @@ declarations are strewn throughout class file.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Declarations</a><ul>
+<li><a class="reference external" href="#classes">Classes</a><ul>
+<li><a class="reference external" href="#ordering-of-class-elements">Ordering Of Class Elements</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             <h4>Previous topic</h4>
             <p class="topless"><a href="../nested_blocks/parentheses.html"
                                   title="previous chapter">Parentheses</a></p>
