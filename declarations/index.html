@@ -20,7 +20,7 @@
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
     <link rel="top" title="Scala Style Guide v1.0 documentation" href="../index.html" />
-    <link rel="next" title="Methods" href="methods/index.html" />
+    <link rel="next" title="Ordering Of Class Elements" href="ordering.html" />
     <link rel="prev" title="Parentheses" href="../nested_blocks/parentheses.html" /> 
   </head>
   <body>
@@ -28,7 +28,7 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="methods/index.html" title="Methods"
+          <a href="ordering.html" title="Ordering Of Class Elements"
              accesskey="N">next</a></li>
         <li class="right" >
           <a href="../nested_blocks/parentheses.html" title="Parentheses"
@@ -80,31 +80,9 @@ between constructor arguments and extensions.:</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<div class="section" id="ordering-of-class-elements">
-<h3>Ordering Of Class Elements<a class="headerlink" href="#ordering-of-class-elements" title="Permalink to this headline">¶</a></h3>
-<p>All class/object/trait members should be declared interleaved with newlines.
-The only exceptions to this rule are <tt class="docutils literal"><span class="pre">var</span></tt> and <tt class="docutils literal"><span class="pre">val</span></tt>.  These may be declared
-without the intervening newline, but only if none of the fields hava scaladoc
-and if all of the fields have simple (max of 20-ish chars, one line) definitions:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">bar</span> <span class="k">=</span> <span class="mi">42</span>
-  <span class="k">val</span> <span class="n">baz</span> <span class="k">=</span> <span class="s">&quot;Daniel&quot;</span>
-
-  <span class="k">def</span> <span class="n">doSomething</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-
-  <span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>Fields should <em>precede</em> methods in a scope.  The only exception is if the <tt class="docutils literal"><span class="pre">val</span></tt>
-has a block definition (more than one expression) and performs opertions which
-may be deemed &#8220;method-like&#8221; (e.g. computing the length of a <tt class="docutils literal"><span class="pre">List</span></tt>).  In such
-cases, the non-trivial <tt class="docutils literal"><span class="pre">val</span></tt> may be declared at a later point in the file as
-logical member ordering would dictate.  This rule <em>only</em> applies to <tt class="docutils literal"><span class="pre">val</span></tt> and
-<tt class="docutils literal"><span class="pre">lazy</span> <span class="pre">val</span></tt>!  It becomes very difficult to track changing aliases if <tt class="docutils literal"><span class="pre">var</span></tt>
-declarations are strewn throughout class file.</p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="methods/index.html">Methods</a><ul>
+<li class="toctree-l1"><a class="reference external" href="ordering.html">Ordering Of Class Elements</a></li>
+<li class="toctree-l1"><a class="reference external" href="methods.html">Methods</a><ul>
 <li class="toctree-l2"><a class="reference external" href="methods/modifiers.html">Modifiers</a></li>
 <li class="toctree-l2"><a class="reference external" href="methods/modifiers.html#body">Body</a></li>
 <li class="toctree-l2"><a class="reference external" href="methods/currying.html">Currying</a></li>
@@ -112,13 +90,31 @@ declarations are strewn throughout class file.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="fields.html">Fields</a></li>
-<li class="toctree-l1"><a class="reference external" href="function_values/index.html">Function Values</a><ul>
-<li class="toctree-l2"><a class="reference external" href="function_values/spacing.html">Spacing</a></li>
-<li class="toctree-l2"><a class="reference external" href="function_values/multi_expression_functions.html">Multi-Expression Functions</a></li>
-</ul>
-</li>
 </ul>
 </div>
+<div class="section" id="function-values">
+<h2>Function Values<a class="headerlink" href="#function-values" title="Permalink to this headline">¶</a></h2>
+<p>Scala provides a number of different syntactic options for declaring function
+values.  For example, the following declarations are exactly equivalent:</p>
+<ol class="arabic simple">
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f1</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">}</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f2</span> <span class="pre">=</span> <span class="pre">(a:</span> <span class="pre">Int,</span> <span class="pre">b:</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f3</span> <span class="pre">=</span> <span class="pre">(_:</span> <span class="pre">Int)</span> <span class="pre">+</span> <span class="pre">(_:</span> <span class="pre">Int)</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">val</span> <span class="pre">f4:</span> <span class="pre">(Int,</span> <span class="pre">Int)</span> <span class="pre">=&gt;</span> <span class="pre">Int</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">_</span> <span class="pre">+</span> <span class="pre">_</span> <span class="pre">}</span></tt></li>
+</ol>
+<p>Of these styles, (1) and (4) are to be preferred at all times.  (2) appears shorter
+in this example, but whenever the function value spans multiple lines (as is
+normally the case), this syntax becomes extremely unweildy.  Similarly, (3) is
+concise, but obtuse.  It is difficult for the untrained eye to decipher the fact
+that this is even producing a function value.</p>
+<p>When styles (1) and (4) are used exclusively, it becomes very easy to distinguish
+places in the source code where function values are used.  Both styles make use
+of curly braces (<tt class="docutils literal"><span class="pre">{}</span></tt>), allowing those characters to be a visual cue that a
+function value may be involved at some level.</p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="function_values/spacing.html">Spacing</a></li>
+<li class="toctree-l1"><a class="reference external" href="function_values/multi_expression_functions.html">Multi-Expression Functions</a></li>
+</ul>
 </div>
 </div>
 
@@ -132,9 +128,9 @@ declarations are strewn throughout class file.</p>
             <ul>
 <li><a class="reference external" href="">Declarations</a><ul>
 <li><a class="reference external" href="#classes">Classes</a><ul>
-<li><a class="reference external" href="#ordering-of-class-elements">Ordering Of Class Elements</a><ul>
 </ul>
 </li>
+<li><a class="reference external" href="#function-values">Function Values</a><ul>
 </ul>
 </li>
 </ul>
@@ -145,8 +141,8 @@ declarations are strewn throughout class file.</p>
             <p class="topless"><a href="../nested_blocks/parentheses.html"
                                   title="previous chapter">Parentheses</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="methods/index.html"
-                                  title="next chapter">Methods</a></p>
+            <p class="topless"><a href="ordering.html"
+                                  title="next chapter">Ordering Of Class Elements</a></p>
 
             <h3>This Page</h3>
             <ul class="this-page-menu">
@@ -183,7 +179,7 @@ declarations are strewn throughout class file.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="methods/index.html" title="Methods"
+          <a href="ordering.html" title="Ordering Of Class Elements"
              >next</a></li>
         <li class="right" >
           <a href="../nested_blocks/parentheses.html" title="Parentheses"

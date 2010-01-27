@@ -62,6 +62,9 @@ invoked using infix notation, delimited by spaces:</p>
 </pre></div>
 </div>
 <p>Such operators are fairly rare, however, and should be avoided during API design.</p>
+<p>Finally, the use of the <tt class="docutils literal"><span class="pre">/:</span></tt> and <tt class="docutils literal"><span class="pre">:\</span></tt> shoudl be avoided in preference to the more explicit
+<tt class="docutils literal"><span class="pre">foldLeft</span></tt> and <tt class="docutils literal"><span class="pre">foldRight</span></tt> method of <tt class="docutils literal"><span class="pre">Iterator</span></tt>.  The right-associativity of the <tt class="docutils literal"><span class="pre">/:</span></tt>
+can lead to extremely confusing code, at the benefit of saving a few characters.</p>
 </div>
 
 
