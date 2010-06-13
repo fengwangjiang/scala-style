@@ -53,30 +53,31 @@ constructor argument on its own line, indented <strong>four</strong> spaces:</p>
 <span class="o">}</span>
 
 <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
-  <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-  <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
-  <span class="n">birthdate</span><span class="k">:</span> <span class="kt">Date</span><span class="o">,</span>
-  <span class="n">astrologicalSign</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-  <span class="n">shoeSize</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
-  <span class="n">favoriteColor</span><span class="k">:</span> <span class="kt">java.awt.Color</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+    <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+    <span class="n">birthdate</span><span class="k">:</span> <span class="kt">Date</span><span class="o">,</span>
+    <span class="n">astrologicalSign</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+    <span class="n">shoeSize</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+    <span class="n">favoriteColor</span><span class="k">:</span> <span class="kt">java.awt.Color</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">firstMethod</span> <span class="k">=</span> <span class="o">...</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 <p>If a class/object/trait extends anything, the same general rule applies, put
-it one one line unless it goes over about 100 characters, and then indent <strong>two</strong>
-spaces with each item being on its own line; this provides visual separation
-between constructor arguments and extensions.:</p>
+it one one line unless it goes over about 100 characters, and then indent <strong>four</strong>
+spaces with each item being on its own line and <strong>two</strong> spaces for
+extensions; this provides visual separation between constructor arguments and extensions.:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
-  <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-  <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
-  <span class="n">birthdate</span><span class="k">:</span> <span class="kt">Date</span><span class="o">,</span>
-  <span class="n">astrologicalSign</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
-  <span class="n">shoeSize</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
-  <span class="n">favoriteColor</span><span class="k">:</span> <span class="kt">java.awt.Color</span><span class="o">)</span>
-    <span class="k">extends</span> <span class="nc">Entity</span>
-    <span class="k">with</span> <span class="nc">Logging</span>
-    <span class="k">with</span> <span class="nc">Identifiable</span>
-    <span class="k">with</span> <span class="nc">Serializable</span> <span class="o">{</span>
+    <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+    <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+    <span class="n">birthdate</span><span class="k">:</span> <span class="kt">Date</span><span class="o">,</span>
+    <span class="n">astrologicalSign</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+    <span class="n">shoeSize</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+    <span class="n">favoriteColor</span><span class="k">:</span> <span class="kt">java.awt.Color</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">Entity</span>
+  <span class="k">with</span> <span class="nc">Logging</span>
+  <span class="k">with</span> <span class="nc">Identifiable</span>
+  <span class="k">with</span> <span class="nc">Serializable</span> <span class="o">{</span>
 <span class="o">}</span>
 </pre></div>
 </div>
