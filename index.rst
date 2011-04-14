@@ -25,6 +25,7 @@ Contents:
    method_invocation/index
    files/index
    scaladoc/index
+   changelog
 
 Indices and tables
 ==================
