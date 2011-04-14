@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>Changelog &mdash; Scala Style Guide v1.2.5 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -20,19 +20,15 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
     <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="index.html" />
-    <link rel="next" title="Indentation" href="indentation/index.html" />
-    <link rel="prev" title="Scala Style Guide" href="index.html" /> 
+    <link rel="prev" title="Scaladoc" href="scaladoc/index.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="indentation/index.html" title="Indentation"
-             accesskey="N">next</a></li>
-        <li class="right" >
-          <a href="index.html" title="Scala Style Guide"
-             accesskey="P">previous</a> |</li>
+          <a href="scaladoc/index.html" title="Scaladoc"
+             accesskey="P">previous</a></li>
         <li><a href="index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -42,24 +38,55 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>Generally speaking, Scala seeks to mimic Java conventions to ease interoperability.
-When in doubt regarding the idiomatic way to express a particular concept, adopt
-conventions and idioms from the following languages (in this order):</p>
-<ul class="simple">
-<li>Java</li>
-<li><a class="reference external" href="http://en.wikipedia.org/wiki/Standard_ML">Standard ML</a></li>
-<li>Haskell</li>
-<li>C#</li>
-<li>OCaml</li>
-<li>Ruby</li>
-<li>Python</li>
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt><strong>v1.2.5</strong> - 4/13/2011</dt>
+<dd><ul class="first last simple">
+<li>Expanded multiple-parameter list styles to include formatting for long parameter lists</li>
+<li>Added a changelog</li>
 </ul>
-<p>For example, you should use Java&#8217;s naming conventions for classes and methods,
-but SML&#8217;s conventions for type annotation, Haskell&#8217;s conventions for type
-parameter naming (except upper-case rather than lower) and Ruby&#8217;s conventions for
-non-boolean accessor methods.  Scala really is a hybrid language!</p>
+</dd>
+<dt><strong>v1.2.4</strong> - 2/13/2011</dt>
+<dd><ul class="first last simple">
+<li>Reworked the currying section to be about multiple parameter lists, based on community feedback</li>
+</ul>
+</dd>
+<dt><strong>v1.2.3</strong> - 1/2/2011</dt>
+<dd><ul class="first last simple">
+<li>Reworded bit about short parameter names based on community feedback</li>
+</ul>
+</dd>
+<dt><strong>v1.2.2</strong> - 12/30/2010</dt>
+<dd><ul class="first last simple">
+<li>Spelling mistakes</li>
+</ul>
+</dd>
+<dt><strong>v1.2.1</strong> - 10/2/2010</dt>
+<dd><ul class="first last simple">
+<li>Removing special note about IntelliJ that no longer applies</li>
+<li>Slight cleanup of scaladoc section and added an example for object scaladoc</li>
+</ul>
+</dd>
+<dt><strong>v1.2.0</strong> - 10/2/2010</dt>
+<dd><ul class="first last simple">
+<li>Clarified how packages work in light of Scala 2.8</li>
+<li>Added new section on writing scaladoc</li>
+</ul>
+</dd>
+<dt><strong>v1.1.0</strong> - 1/26/2010</dt>
+<dd><ul class="first last simple">
+<li>Clarified the use for <tt class="docutils literal"><span class="pre">for</span></tt> comprehensions</li>
+<li>Documented avoidance of <tt class="docutils literal"><span class="pre">/:</span></tt> and similar operators</li>
+<li>Possibly other changes</li>
+</ul>
+</dd>
+<dt><strong>v1.0.0</strong></dt>
+<dd><ul class="first last simple">
+<li>Similar to Daniel Spewak&#8217;s initial version; possibly slight changes</li>
+</ul>
+</dd>
+</dl>
 </div>
 
 
@@ -69,15 +96,12 @@ non-boolean accessor methods.  Scala really is a hybrid language!</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <h4>Previous topic</h4>
-            <p class="topless"><a href="index.html"
-                                  title="previous chapter">Scala Style Guide</a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="indentation/index.html"
-                                  title="next chapter">Indentation</a></p>
+            <p class="topless"><a href="scaladoc/index.html"
+                                  title="previous chapter">Scaladoc</a></p>
 
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="sources/overview.txt"
+              <li><a href="sources/changelog.txt"
                      rel="nofollow">Show Source</a></li>
             </ul>
 <h3>Alternate Formats</h3>
@@ -110,11 +134,8 @@ non-boolean accessor methods.  Scala really is a hybrid language!</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="indentation/index.html" title="Indentation"
-             >next</a></li>
-        <li class="right" >
-          <a href="index.html" title="Scala Style Guide"
-             >previous</a> |</li>
+          <a href="scaladoc/index.html" title="Scaladoc"
+             >previous</a></li>
         <li><a href="index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
