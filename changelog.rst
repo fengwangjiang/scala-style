@@ -29,4 +29,4 @@ Changelog
   * Possibly other changes
 
 **v1.0.0**
-  * Similar to Daniel Spewak's initial version; possibly slight changes
+  * Similar to Daniel Spiewak's initial version; possibly slight changes
