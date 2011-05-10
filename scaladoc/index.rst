@@ -25,6 +25,13 @@ this format can be used::
     /** Does something very simple */
     def simple = {}
 
+Note a few things, especially if you are coming from Java:
+
+* The left-hand margin of asterisks falls under the _third_ column, not the second, as is customary in Java
+* The trailing ``*/`` comes on the last line, *not* on a line by itself, as is customary in Java
+
+See the AuthorDocs_ at the EPFL Scala wiki for more technical info on formatting Scaladoc
+
 General Style
 -------------
 
@@ -162,5 +169,4 @@ Subsequent sentences explain in further detail.  Document each parameter as well
 idiomatic usage.  For implicit parameters, take special to care to explain where these parameters will come from
 and if the user needs to do any extra work to make sure the parameters will be available.
 
-
-
+.. _AuthorDocs: http://lampsvn.epfl.ch/trac/scala/wiki/Scaladoc/AuthorDocs
