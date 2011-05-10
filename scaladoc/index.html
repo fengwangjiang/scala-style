@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Scaladoc &mdash; Scala Style Guide v1.2.5 documentation</title>
+    <title>Scaladoc &mdash; Scala Style Guide v1.2.6 documentation</title>
     <link rel="stylesheet" href="../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.2.5',
+        VERSION:     '1.2.6',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
-    <link rel="top" title="Scala Style Guide v1.2.5 documentation" href="../index.html" />
+    <link rel="top" title="Scala Style Guide v1.2.6 documentation" href="../index.html" />
     <link rel="next" title="Changelog" href="../changelog.html" />
     <link rel="prev" title="Multi-Unit Files" href="../files/multi_unit_files.html" /> 
   </head>
@@ -33,7 +33,7 @@
         <li class="right" >
           <a href="../files/multi_unit_files.html" title="Multi-Unit Files"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Scala Style Guide v1.2.6 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -53,12 +53,10 @@ of detail and explanation as you write, starting from a terse summary (useful fo
 providing deeper examples in the detailed sections (which can be ignored by experienced users, but can
 be invaluable for newcomers).</p>
 <p>The general format for a scaladoc comment should be as follows:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/**</span>
-<span class="cm"> * This is a brief description of what&#39;s being documented.</span>
-<span class="cm"> *</span>
-<span class="cm"> * This is further documentation of what we&#39;re documenting.  It should</span>
-<span class="cm"> * provide more details as to how this works and what it does.</span>
-<span class="cm"> */</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/** This is a brief description of what&#39;s being documented.</span>
+<span class="cm">  *</span>
+<span class="cm">  * This is further documentation of what we&#39;re documenting.  It should</span>
+<span class="cm">  * provide more details as to how this works and what it does. */</span>
 <span class="k">def</span> <span class="n">myMethod</span> <span class="k">=</span> <span class="o">{}</span>
 </pre></div>
 </div>
@@ -68,6 +66,12 @@ this format can be used:</p>
 <span class="k">def</span> <span class="n">simple</span> <span class="k">=</span> <span class="o">{}</span>
 </pre></div>
 </div>
+<p>Note a few things, especially if you are coming from Java:</p>
+<ul class="simple">
+<li>The left-hand margin of asterisks falls under the _third_ column, not the second, as is customary in Java</li>
+<li>The trailing <tt class="docutils literal"><span class="pre">*/</span></tt> comes on the last line, <em>not</em> on a line by itself, as is customary in Java</li>
+</ul>
+<p>See the <a class="reference external" href="http://lampsvn.epfl.ch/trac/scala/wiki/Scaladoc/AuthorDocs">AuthorDocs</a> at the EPFL Scala wiki for more technical info on formatting Scaladoc</p>
 <div class="section" id="general-style">
 <h2>General Style<a class="headerlink" href="#general-style" title="Permalink to this headline">¶</a></h2>
 <p>It is important to maintain a consistent style with scaladoc.  It is also important to target scaladoc
@@ -95,9 +99,7 @@ include REPL code is to develop the examples in the REPL and paste it into the s
 (for the package <tt class="docutils literal"><span class="pre">parent.package.name.mypackage</span></tt>):</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">parent.package.name</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * This is the scaladoc for the package.</span>
-<span class="cm"> */</span>
+<span class="cm">/** This is the scaladoc for the package. */</span>
 <span class="k">package</span> <span class="nn">object</span> <span class="n">mypackage</span> <span class="o">{</span>
 <span class="o">}</span>
 </pre></div>
@@ -108,25 +110,23 @@ the general sorts of things the package object itself provides.</p>
 provide an overview of the major classes, with some basic examples of how to use the classes in that package.  Be
 sure to reference classes using the square-bracket notation:</p>
 <div class="highlight-scala"><div class="highlight"><pre><span class="k">package</span> <span class="nn">my.package</span>
-<span class="cm">/**</span>
-<span class="cm"> * Provides classes for dealing with complex numbers.  Also provides implicits for</span>
-<span class="cm"> * converting to and from `Int`.</span>
-<span class="cm"> *</span>
-<span class="cm"> * ==Overview==</span>
-<span class="cm"> * The main class to use is [[my.package.complex.Complex]], as so</span>
-<span class="cm"> * {{{</span>
-<span class="cm"> * scala&gt; val complex = Complex(4,3)</span>
-<span class="cm"> * complex: my.package.complex.Complex = 4 + 3i</span>
-<span class="cm"> * }}}</span>
-<span class="cm"> *</span>
-<span class="cm"> * If you include [[my.package.complex.ComplexConversions]], you can</span>
-<span class="cm"> * convert numbers more directly</span>
-<span class="cm"> * {{{</span>
-<span class="cm"> * scala&gt; import my.package.complex.ComplexConversions._</span>
-<span class="cm"> * scala&gt; val complex = 4 + 3.i</span>
-<span class="cm"> * complex: my.package.complex.Complex = 4 + 3i</span>
-<span class="cm"> * }}}</span>
-<span class="cm"> */</span>
+<span class="cm">/** Provides classes for dealing with complex numbers.  Also provides implicits for</span>
+<span class="cm">  * converting to and from `Int`.</span>
+<span class="cm">  *</span>
+<span class="cm">  * ==Overview==</span>
+<span class="cm">  * The main class to use is [[my.package.complex.Complex]], as so</span>
+<span class="cm">  * {{{</span>
+<span class="cm">  * scala&gt; val complex = Complex(4,3)</span>
+<span class="cm">  * complex: my.package.complex.Complex = 4 + 3i</span>
+<span class="cm">  * }}}</span>
+<span class="cm">  *</span>
+<span class="cm">  * If you include [[my.package.complex.ComplexConversions]], you can</span>
+<span class="cm">  * convert numbers more directly</span>
+<span class="cm">  * {{{</span>
+<span class="cm">  * scala&gt; import my.package.complex.ComplexConversions._</span>
+<span class="cm">  * scala&gt; val complex = 4 + 3.i</span>
+<span class="cm">  * complex: my.package.complex.Complex = 4 + 3i</span>
+<span class="cm">  * }}} */</span>
 <span class="k">package</span> <span class="nn">complex</span> <span class="o">{}</span>
 </pre></div>
 </div>
@@ -142,13 +142,11 @@ the class or trait does.  Document all type parameters with <tt class="docutils 
 a link to the companion object inline, however the generated scaladoc will create a link for you in the class documentation
 output.</p>
 <p>If the class should be created using a constructor, document it using the <tt class="docutils literal"><span class="pre">&#64;constructor</span></tt> syntax:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/**</span>
-<span class="cm"> * A person who uses our application.</span>
-<span class="cm"> *</span>
-<span class="cm"> * @constructor create a new person with a name and age.</span>
-<span class="cm"> * @param name the person&#39;s name</span>
-<span class="cm"> * @param age the person&#39;s age in years</span>
-<span class="cm"> */</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/** A person who uses our application.</span>
+<span class="cm">  *</span>
+<span class="cm">  * @constructor create a new person with a name and age.</span>
+<span class="cm">  * @param name the person&#39;s name</span>
+<span class="cm">  * @param age the person&#39;s age in years */</span>
 <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span><span class="k">:</span><span class="kt">String</span><span class="o">,</span> <span class="n">age</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
 <span class="o">}</span>
 </pre></div>
@@ -162,34 +160,30 @@ object (e.g. as a factory, for implicit methods).
 If this object is a factory for other objects, indicate as such here, deferring the specifics to
 the scaladoc for the <tt class="docutils literal"><span class="pre">apply</span></tt> method(s).  If your object <em>doesn&#8217;t</em> use <tt class="docutils literal"><span class="pre">apply</span></tt> as a factory
 method, be sure to indicate the actual method names:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/**</span>
-<span class="cm"> * Factory for [[mypackage.Person]] instances.</span>
-<span class="cm"> */</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/** Factory for [[mypackage.Person]] instances. */</span>
 <span class="k">object</span> <span class="nc">Person</span> <span class="o">{</span>
   <span class="cm">/** Create a person with a given name and age.</span>
-<span class="cm">   * @param name their name</span>
-<span class="cm">   * @param age the age of the person to create</span>
-<span class="cm">   */</span>
+<span class="cm">    *</span>
+<span class="cm">    * @param name their name</span>
+<span class="cm">    * @param age the age of the person to create */</span>
   <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">name</span><span class="k">:</span><span class="kt">String</span><span class="o">,</span><span class="n">age</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{}</span>
   <span class="cm">/** Create a person with a given name and birthdate</span>
-<span class="cm">   * @param name their name</span>
-<span class="cm">   * @param birthDate the person&#39;s birthdate</span>
-<span class="cm">   * @return a new Person instance with the age determined by the</span>
-<span class="cm">   * birthdate and current date.</span>
-<span class="cm">   */</span>
+<span class="cm">    *</span>
+<span class="cm">    * @param name their name</span>
+<span class="cm">    * @param birthDate the person&#39;s birthdate</span>
+<span class="cm">    * @return a new Person instance with the age determined by the</span>
+<span class="cm">    *         birthdate and current date. */</span>
   <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">name</span><span class="k">:</span><span class="kt">String</span><span class="o">,</span><span class="n">birthDate</span><span class="k">:</span><span class="kt">java.util.Date</span><span class="o">)</span> <span class="k">=</span> <span class="o">{}</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 <p>If your object holds implicit conversions, provide an example in the scaladoc:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/**</span>
-<span class="cm"> * Implicits conversions and helpers for [[mypackage.Complex]] instances.</span>
-<span class="cm"> *</span>
-<span class="cm"> * {{{</span>
-<span class="cm"> * import ComplexImplicits._</span>
-<span class="cm"> * val c:Complex = 4 + 3.i</span>
-<span class="cm"> * }}}</span>
-<span class="cm"> */</span>
+<div class="highlight-scala"><div class="highlight"><pre><span class="cm">/** Implicits conversions and helpers for [[mypackage.Complex]] instances.</span>
+<span class="cm">  *</span>
+<span class="cm">  * {{{</span>
+<span class="cm">  * import ComplexImplicits._</span>
+<span class="cm">  * val c:Complex = 4 + 3.i</span>
+<span class="cm">  * }}} */</span>
 <span class="k">object</span> <span class="nc">ComplexImplicits</span> <span class="o">{}</span>
 </pre></div>
 </div>
@@ -279,7 +273,7 @@ and if the user needs to do any extra work to make sure the parameters will be a
         <li class="right" >
           <a href="../files/multi_unit_files.html" title="Multi-Unit Files"
              >previous</a> |</li>
-        <li><a href="../index.html">Scala Style Guide v1.2.5 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Scala Style Guide v1.2.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
