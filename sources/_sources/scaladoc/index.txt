@@ -13,12 +13,10 @@ be invaluable for newcomers).
 
 The general format for a scaladoc comment should be as follows::
 
-    /**
-     * This is a brief description of what's being documented.
-     *
-     * This is further documentation of what we're documenting.  It should
-     * provide more details as to how this works and what it does.
-     */
+    /** This is a brief description of what's being documented.
+      *
+      * This is further documentation of what we're documenting.  It should
+      * provide more details as to how this works and what it does. */
     def myMethod = {}
 
 For methods and other type members where the only documentation needed is a simple, short description, 
@@ -26,6 +24,13 @@ this format can be used::
 
     /** Does something very simple */
     def simple = {}
+
+Note a few things, especially if you are coming from Java:
+
+* The left-hand margin of asterisks falls under the _third_ column, not the second, as is customary in Java
+* The trailing ``*/`` comes on the last line, *not* on a line by itself, as is customary in Java
+
+See the AuthorDocs_ at the EPFL Scala wiki for more technical info on formatting Scaladoc
 
 General Style
 -------------
@@ -56,9 +61,7 @@ Provide scaladoc for each package.  This goes in a file named ``package.scala`` 
 
     package parent.package.name
 
-    /**
-     * This is the scaladoc for the package.
-     */
+    /** This is the scaladoc for the package. */
     package object mypackage {
     }
 
@@ -70,25 +73,23 @@ provide an overview of the major classes, with some basic examples of how to use
 sure to reference classes using the square-bracket notation::
 
     package my.package
-    /**
-     * Provides classes for dealing with complex numbers.  Also provides implicits for
-     * converting to and from `Int`.
-     *
-     * ==Overview==
-     * The main class to use is [[my.package.complex.Complex]], as so
-     * {{{
-     * scala> val complex = Complex(4,3)
-     * complex: my.package.complex.Complex = 4 + 3i
-     * }}}
-     *
-     * If you include [[my.package.complex.ComplexConversions]], you can 
-     * convert numbers more directly
-     * {{{
-     * scala> import my.package.complex.ComplexConversions._
-     * scala> val complex = 4 + 3.i
-     * complex: my.package.complex.Complex = 4 + 3i
-     * }}}
-     */
+    /** Provides classes for dealing with complex numbers.  Also provides implicits for
+      * converting to and from `Int`.
+      *
+      * ==Overview==
+      * The main class to use is [[my.package.complex.Complex]], as so
+      * {{{
+      * scala> val complex = Complex(4,3)
+      * complex: my.package.complex.Complex = 4 + 3i
+      * }}}
+      *
+      * If you include [[my.package.complex.ComplexConversions]], you can 
+      * convert numbers more directly
+      * {{{
+      * scala> import my.package.complex.ComplexConversions._
+      * scala> val complex = 4 + 3.i
+      * complex: my.package.complex.Complex = 4 + 3i
+      * }}} */
     package complex {}
 
 Classes, Objects, and Traits
@@ -108,13 +109,11 @@ output.
 
 If the class should be created using a constructor, document it using the ``@constructor`` syntax::
 
-    /**
-     * A person who uses our application.
-     *
-     * @constructor create a new person with a name and age.
-     * @param name the person's name
-     * @param age the person's age in years
-     */
+    /** A person who uses our application.
+      *
+      * @constructor create a new person with a name and age.
+      * @param name the person's name
+      * @param age the person's age in years */
     class Person(name:String, age:Int) {
     }
 
@@ -129,34 +128,30 @@ If this object is a factory for other objects, indicate as such here, deferring 
 the scaladoc for the ``apply`` method(s).  If your object *doesn't* use ``apply`` as a factory
 method, be sure to indicate the actual method names::
 
-    /**
-     * Factory for [[mypackage.Person]] instances.
-     */
+    /** Factory for [[mypackage.Person]] instances. */
     object Person {
       /** Create a person with a given name and age.
-       * @param name their name
-       * @param age the age of the person to create
-       */
+        *
+        * @param name their name
+        * @param age the age of the person to create */
       def apply(name:String,age:Int) = {}
       /** Create a person with a given name and birthdate
-       * @param name their name
-       * @param birthDate the person's birthdate
-       * @return a new Person instance with the age determined by the 
-       * birthdate and current date.
-       */
+        *
+        * @param name their name
+        * @param birthDate the person's birthdate
+        * @return a new Person instance with the age determined by the 
+        *         birthdate and current date. */
       def apply(name:String,birthDate:java.util.Date) = {}
     }
 
 If your object holds implicit conversions, provide an example in the scaladoc::
 
-    /**
-     * Implicits conversions and helpers for [[mypackage.Complex]] instances.
-     *
-     * {{{
-     * import ComplexImplicits._
-     * val c:Complex = 4 + 3.i
-     * }}}
-     */
+    /** Implicits conversions and helpers for [[mypackage.Complex]] instances.
+      *
+      * {{{
+      * import ComplexImplicits._
+      * val c:Complex = 4 + 3.i
+      * }}} */
     object ComplexImplicits {}
 
 Traits
@@ -174,5 +169,4 @@ Subsequent sentences explain in further detail.  Document each parameter as well
 idiomatic usage.  For implicit parameters, take special to care to explain where these parameters will come from
 and if the user needs to do any extra work to make sure the parameters will be available.
 
-
-
+.. _AuthorDocs: http://lampsvn.epfl.ch/trac/scala/wiki/Scaladoc/AuthorDocs

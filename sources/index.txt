@@ -26,6 +26,7 @@ Contents:
    files/index
    scaladoc/index
    changelog
+   license
 
 Indices and tables
 ==================
