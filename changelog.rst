@@ -1,6 +1,7 @@
 Changelog
 =========
-
+**v1.2.6** - 6/12/2011
+  * Added CC license
 
 **v1.2.5** - 4/13/2011
   * Expanded multiple-parameter list styles to include formatting for long parameter lists
