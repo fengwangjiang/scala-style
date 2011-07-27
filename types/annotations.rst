@@ -14,12 +14,4 @@ as this one::
     value :::
     
 This is actually valid Scala, declaring a value to be of type ``::``.  Obviously,
-the prefix-style annotation colon muddles things greatly.  The other option is
-the "two space" syntax::
-    
-    value : Type
-    
-This syntax is preferable to the prefix-style, but it is not widely adopted due
-to its increased verbosity.
-
-
+the prefix-style annotation colon muddles things greatly.
