@@ -16,7 +16,8 @@ The general format for a scaladoc comment should be as follows::
     /** This is a brief description of what's being documented.
       *
       * This is further documentation of what we're documenting.  It should
-      * provide more details as to how this works and what it does. */
+      * provide more details as to how this works and what it does. 
+      */
     def myMethod = {}
 
 For methods and other type members where the only documentation needed is a simple, short description, 
@@ -25,10 +26,7 @@ this format can be used::
     /** Does something very simple */
     def simple = {}
 
-Note a few things, especially if you are coming from Java:
-
-* The left-hand margin of asterisks falls under the _third_ column, not the second, as is customary in Java
-* The trailing ``*/`` comes on the last line, *not* on a line by itself, as is customary in Java
+Note, especially for those coming from Java, that the left-hand margin of asterisks falls under the _third_ column, not the second, as is customary in Java.
 
 See the AuthorDocs_ at the EPFL Scala wiki for more technical info on formatting Scaladoc
 
@@ -89,7 +87,8 @@ sure to reference classes using the square-bracket notation::
       * scala> import my.package.complex.ComplexConversions._
       * scala> val complex = 4 + 3.i
       * complex: my.package.complex.Complex = 4 + 3i
-      * }}} */
+      * }}} 
+      */
     package complex {}
 
 Classes, Objects, and Traits
@@ -113,7 +112,8 @@ If the class should be created using a constructor, document it using the ``@con
       *
       * @constructor create a new person with a name and age.
       * @param name the person's name
-      * @param age the person's age in years */
+      * @param age the person's age in years 
+      */
     class Person(name:String, age:Int) {
     }
 
@@ -133,14 +133,16 @@ method, be sure to indicate the actual method names::
       /** Create a person with a given name and age.
         *
         * @param name their name
-        * @param age the age of the person to create */
+        * @param age the age of the person to create 
+        */
       def apply(name:String,age:Int) = {}
       /** Create a person with a given name and birthdate
         *
         * @param name their name
         * @param birthDate the person's birthdate
         * @return a new Person instance with the age determined by the 
-        *         birthdate and current date. */
+        *         birthdate and current date. 
+        */
       def apply(name:String,birthDate:java.util.Date) = {}
     }
 
@@ -151,7 +153,8 @@ If your object holds implicit conversions, provide an example in the scaladoc::
       * {{{
       * import ComplexImplicits._
       * val c:Complex = 4 + 3.i
-      * }}} */
+      * }}} 
+      */
     object ComplexImplicits {}
 
 Traits
