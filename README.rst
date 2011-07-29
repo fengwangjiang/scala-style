@@ -33,4 +33,4 @@ Fork It
 * Send me a pull request
 
 Note that this document is still in flux, so I would recommend discussing your changes on 
-``scala-user@listes.epfl.ch``  or ``scala@listes.epfl.ch`` to try get some community consensus
+``http://groups.google.com/group/scala-language?pli=1`` to try get some community consensus
