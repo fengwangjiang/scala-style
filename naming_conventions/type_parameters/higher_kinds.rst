@@ -15,7 +15,7 @@ concepts used throughout a codebase, such as F[_] for Functor and M[_] for Monad
 In such cases, the fundamental concept should be something well known and understood
 to the team, or have tertiary evidence, such as the following::
 
-    def doSomething[M[_] : Monad](m : M[Int]) = ...
+    def doSomething[M[_]: Monad](m: M[Int]) = ...
 
 Here, the type bound : Monad offers the necessary evidence to inform the reader that
 M[_] is the type of the Monad.

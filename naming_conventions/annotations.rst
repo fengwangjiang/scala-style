@@ -14,5 +14,5 @@ example, when using JDBC::
 
     type id = javax.persistence.Id @annotation.target.field
     @id
-    var id : Int = 0
+    var id: Int = 0
 

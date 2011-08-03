@@ -13,7 +13,7 @@ can be expected in general development.::
     }
 
     object inc {
-      def apply(x : Int) : Int = x + 1
+      def apply(x: Int) : Int = x + 1
     }
 
 In *all* other cases, objects should be named according to the class naming
