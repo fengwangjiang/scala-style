@@ -12,6 +12,11 @@ should use Scala's syntactic sugar to avoid accidentally confusing return types:
       expr
     }
     
+Methods with default parameter values should be declared in an analogous fashion,
+with a space on either side of the equals sign::
+    
+    def foo(x: Int = 6, y: Int = 7) = expr
+    
 .. toctree::
 
    methods/modifiers
