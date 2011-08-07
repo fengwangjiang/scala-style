@@ -38,7 +38,7 @@ to both those unfamiliar with your code and experienced users who just need a qu
 are some general guidelines:
 
 * Get to the point as quickly as possible. For example, say "returns true if some condition" instead of "if some condition return true".
-* Try to format the first sentence of a method as "Returns XXX", as in "Returns the first object of the List", as opposed to "this method returns" or "get the first" etc.  Methods typically **return** things.
+* Try to format the first sentence of a method as "Returns XXX", as in "Returns the first element of the List", as opposed to "this method returns" or "get the first" etc.  Methods typically **return** things.
 * This same goes for classes; omit "This class does XXX"; just say "Does XXX"
 * Create links to referenced Scala Library classes using the square-bracket syntax, e.g. ``[[scala.Option]]``
 * Summarize a method's return value in the ``@return`` annotation, leaving a longer description for the main scaladoc.
