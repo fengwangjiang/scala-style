@@ -26,4 +26,4 @@ the actuals.
 
    arity0/index
    arity1/index
-   operators
+   symbolic_methods
