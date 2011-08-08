@@ -1,5 +1,5 @@
-Symbolic methods
-----------------
+Symbolic methods/Operators
+--------------------------
 
 Methods with symbolic names should *always* be invoked using infix notation with
 spaces separating the target, the symbolic method and the parameter::
