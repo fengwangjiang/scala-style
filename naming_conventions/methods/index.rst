@@ -13,4 +13,4 @@ information may be found in the method invocation section.
 
    accessors_mutators
    parentheses
-   operators
+   symbolic_method_names

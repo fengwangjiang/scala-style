@@ -46,7 +46,7 @@ doc.column_box([0,7.5.in - 24], :width => 10.in, :height => 7.5.in - 24, :column
 // indent 2 characters
 def doit { // K&R style bracing
   callSomeCode()
-  // must have trailing operators 
+  // must have trailing method 
   // when wrapping
   val x = 4 + 5 + 8 + 4 + 
     3 + 6 + 5 + 9
@@ -132,7 +132,7 @@ class cloneable extends StaticAnnotation
 // one-liners can use short names
 def add(a:Int, b:Int) = a + b
 
-def !@#%^ = "avoid crazy operators"
+def !@#%^ = "avoid crazy method names"
 
 EOS
   sub(doc)
@@ -246,7 +246,7 @@ javaList.add("item")
 // acceptable and idiomatic
 xs map { _.toString } filter { _.length > 5 }
 
-// symbolic operators always infix
+// symbolic methods always infix
 val all = some ++ others
 
 EOS
