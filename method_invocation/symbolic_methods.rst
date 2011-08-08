@@ -2,7 +2,7 @@ Symbolic methods
 ----------------
 
 Methods with symbolic names should *always* be invoked using infix notation with
-spaces separated the target, the symbolic method and the parameter::
+spaces separating the target, the symbolic method and the parameter::
     
     // right!
     "daniel" + " " + "Spiewak"
