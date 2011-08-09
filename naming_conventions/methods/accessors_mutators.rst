@@ -5,17 +5,18 @@ Scala does *not* follow the Java convention of prepending ``set``/``get`` to
 mutator and accessor methods (respectively).  Instead, the following conventions
 are used:
 
-* For accessors of *most* boolean and non-boolean properties, the name of the
+* For accessors of properties, the name of the
   method should be the name of the property
-* For accessors of *some* boolean properties, the name of the method may be the
-  capitalized name of the property with "``is``" prepended (e.g. ``isEmpty``).
-  This should only be the case when no corresponding mutator is provided.  Please
-  note that the Lift_ convention of appending "``_?``" to boolean accessors is
-  non-standard and not used outside of the Lift framework.
+* In some instances, it is acceptable to prepend "`is`" on a boolean accessor
+  (e.g. ``isEmpty``). This should only be the case when no corresponding 
+  mutator is provided.  Please note that the Lift_ convention of appending 
+  "``_?``" to boolean accessors is non-standard and not used outside of the 
+  Lift framework.
 * For mutators, the name of the method should be the name of the property with
   "``_=``" appended.  As long as a corresponding accessor with that particular
   property name is defined on the enclosing type, this convention will enable
-  a call-site mutation syntax which mirrors assignment.
+  a call-site mutation syntax which mirrors assignment.  Note that this is not
+  just a convention but a requirement of the language.
 
 ::
     
@@ -50,16 +51,13 @@ property they represent.  For example::
             this.name = name;
         }
     }
-    
-If we were to attempt to adopt this convention within Scala while observing the
-accessor naming conventions given above, the Scala compiler would complain about
-a naming collision between the ``name`` field and the ``name`` method.  There are
-a number of ways to avoid this problem and the community has yet to standardize
-on any one of them.  The following illustrates one of the less error-prone
-conventions::
+
+In Scala, there is no distinction between fields and methods.  In fact, fields are
+completely named and controlled by the compiler.  If we wanted to adopt the Java
+convention of bean getters/setters in Scala, this is a rather simple encoding::
     
     class Company {
-      private val _name: String = _
+      private var _name: String = _
       
       def name = _name
       
@@ -69,14 +67,20 @@ conventions::
     }
     
 While Hungarian notation is terribly ugly, it does have the advantage of
-disambiguating the ``_name`` field without cluttering the identifier.  The
+disambiguating the ``_name`` variable without cluttering the identifier.  The
 underscore is in the prefix position rather than the suffix to avoid any danger
 of mistakenly typing ``name _`` instead of ``name_``.  With heavy use of Scala's
 type inference, such a mistake could potentially lead to a very confusing error.
 
-Note that fields may actually be used in a number of situations where accessors
-and mutators would be required in languages like Java.  Always prefer fields over
-methods when given the choice.
+Note that the Java getter/setter paradigm was often used to work aroun a lack
+of first class support for Properties and bindings.   In Scala, there are
+libraries that support properties and bindings.  The convention is to
+use an immutable refrence to a property class that contains its own getter and
+setter.  For example::
+
+  class Company {
+    val string : Property[String] = 
+      Property("Initial Value")
 
 .. _Lift: http://liftweb.com
 

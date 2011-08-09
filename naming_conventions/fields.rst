@@ -1,8 +1,9 @@
-Fields
-------
+Values, Variable and Methods
+----------------------------
 
-Field names should be in camelCase with the first letter lower-case::
+Method, Value and variable names should be in camelCase with the first letter lower-case::
     
-    val myFairField = ...
-    
+    val myValue = ...
+    def myMethod = ...
+    var myVariable
 
