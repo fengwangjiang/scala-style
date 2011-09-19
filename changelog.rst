@@ -1,5 +1,13 @@
 Changelog
 =========
+**v1.3.1** - 9/19/2011
+  * Restored sane and canonical scaladoc format
+  * Changed naming convention of type parameters, per @jsuereth
+  * Use term "symbolic methods" instead of "operators", per @soc
+  * Additional operator overloading warning, per @djswpiewak
+  * Notes on calling and declaring mehtods with default parameters, per @djspiewak
+  * Other cleanups, clarifications, and rewordings, per @jsuereth
+
 **v1.2.6** - 6/12/2011
   * Added CC license
 
