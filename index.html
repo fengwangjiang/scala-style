@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,21 +7,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Scala Style Guide &mdash; Scala Style Guide v1.2.7 documentation</title>
+    <title>Scala Style Guide &mdash; Scala Style Guide v1.3.1 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '1.2.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '1.3.1',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="Scala Style Guide v1.2.7 documentation" href="" />
+    <link rel="top" title="Scala Style Guide v1.3.1 documentation" href="#" />
     <link rel="next" title="Overview" href="overview.html" /> 
   </head>
   <body>
@@ -29,7 +32,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="overview.html" title="Overview"
              accesskey="N">next</a></li>
-        <li><a href="">Scala Style Guide v1.2.7 documentation</a> &raquo;</li> 
+        <li><a href="#">Scala Style Guide v1.3.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -48,113 +51,115 @@ encouraged and how it relates to other alternatives. As with all style guides,
 treat this document as a list of rules to be broken. There are certainly times
 when alternative styles should be preferred over the ones given here.</p>
 <p>Contents:</p>
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference external" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference external" href="indentation/index.html">Indentation</a><ul>
-<li class="toctree-l2"><a class="reference external" href="indentation/line_wrapping.html">Line Wrapping</a></li>
-<li class="toctree-l2"><a class="reference external" href="indentation/methods_with_numerous_arguments.html">Methods with Numerous Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indentation/index.html">Indentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="indentation/line_wrapping.html">Line Wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indentation/methods_with_numerous_arguments.html">Methods with Numerous Arguments</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="naming_conventions/index.html">Naming Conventions</a><ul>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/classes_traits.html">Classes/Traits</a></li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/objects.html">Objects</a></li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/packages.html">Packages</a><ul>
-<li class="toctree-l3"><a class="reference external" href="naming_conventions/packages.html#versions-prior-to-2-8">Versions Prior to 2.8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="naming_conventions/index.html">Naming Conventions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/classes_traits.html">Classes/Traits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/objects.html">Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/packages.html">Packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="naming_conventions/packages.html#versions-prior-to-2-8">Versions Prior to 2.8</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/methods/index.html">Methods</a><ul>
-<li class="toctree-l3"><a class="reference external" href="naming_conventions/methods/accessors_mutators.html">Accessors/Mutators</a></li>
-<li class="toctree-l3"><a class="reference external" href="naming_conventions/methods/parentheses.html">Parentheses</a></li>
-<li class="toctree-l3"><a class="reference external" href="naming_conventions/methods/operators.html">Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/methods/index.html">Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="naming_conventions/methods/accessors_mutators.html">Accessors/Mutators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="naming_conventions/methods/parentheses.html">Parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="naming_conventions/methods/symbolic_method_names.html">Symbolic Method Names</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/fields.html">Fields</a></li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/type_parameters/index.html">Type Parameters (generics)</a><ul>
-<li class="toctree-l3"><a class="reference external" href="naming_conventions/type_parameters/higher_kinds.html">Higher-Kinds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/fields.html">Values, Variable and Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/type_parameters/index.html">Type Parameters (generics)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="naming_conventions/type_parameters/higher_kinds.html">Higher-Kinds and Parameterized Type parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/type_aliases.html">Type Aliases</a></li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/annotations.html">Annotations</a></li>
-<li class="toctree-l2"><a class="reference external" href="naming_conventions/special_note_on_brevity.html">Special Note on Brevity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/type_aliases.html">Type Aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/annotations.html">Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/special_note_on_brevity.html">Special Note on Brevity</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="types/index.html">Types</a><ul>
-<li class="toctree-l2"><a class="reference external" href="types/inference/index.html">Inference</a><ul>
-<li class="toctree-l3"><a class="reference external" href="types/inference/function_values.html">Function Values</a></li>
-<li class="toctree-l3"><a class="reference external" href="types/inference/void_methods.html">&#8220;Void&#8221; Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types/index.html">Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="types/inference/index.html">Inference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="types/inference/function_values.html">Function Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/inference/void_methods.html">&#8220;Void&#8221; Methods</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="types/annotations.html">Annotations</a></li>
-<li class="toctree-l2"><a class="reference external" href="types/ascription.html">Ascription</a></li>
-<li class="toctree-l2"><a class="reference external" href="types/functions/index.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference external" href="types/functions/arity_1.html">Arity-1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types/annotations.html">Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types/ascription.html">Ascription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types/functions/index.html">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="types/functions/arity_1.html">Arity-1</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="types/structural_types.html">Structural Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types/structural_types.html">Structural Types</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="nested_blocks/index.html">Nested Blocks</a><ul>
-<li class="toctree-l2"><a class="reference external" href="nested_blocks/curly_braces.html">Curly Braces</a></li>
-<li class="toctree-l2"><a class="reference external" href="nested_blocks/parentheses.html">Parentheses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nested_blocks/index.html">Nested Blocks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nested_blocks/curly_braces.html">Curly Braces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nested_blocks/parentheses.html">Parentheses</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="declarations/index.html">Declarations</a><ul>
-<li class="toctree-l2"><a class="reference external" href="declarations/index.html#classes">Classes</a><ul>
-<li class="toctree-l3"><a class="reference external" href="declarations/ordering.html">Ordering Of Class Elements</a></li>
-<li class="toctree-l3"><a class="reference external" href="declarations/methods.html">Methods</a></li>
-<li class="toctree-l3"><a class="reference external" href="declarations/fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declarations/index.html">Declarations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="declarations/index.html#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="declarations/ordering.html">Ordering Of Class Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="declarations/methods.html">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="declarations/fields.html">Fields</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="declarations/index.html#function-values">Function Values</a><ul>
-<li class="toctree-l3"><a class="reference external" href="declarations/function_values/spacing.html">Spacing</a></li>
-<li class="toctree-l3"><a class="reference external" href="declarations/function_values/multi_expression_functions.html">Multi-Expression Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="declarations/index.html#function-values">Function Values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="declarations/function_values/spacing.html">Spacing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="declarations/function_values/multi_expression_functions.html">Multi-Expression Functions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="control_structures/index.html">Control Structures</a><ul>
-<li class="toctree-l2"><a class="reference external" href="control_structures/curly_braces.html">Curly-Braces</a></li>
-<li class="toctree-l2"><a class="reference external" href="control_structures/comprehensions.html">Comprehensions</a></li>
-<li class="toctree-l2"><a class="reference external" href="control_structures/trivial_conditionals.html">Trivial Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_structures/index.html">Control Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="control_structures/curly_braces.html">Curly-Braces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_structures/comprehensions.html">Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_structures/trivial_conditionals.html">Trivial Conditionals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="method_invocation/index.html">Method Invocation</a><ul>
-<li class="toctree-l2"><a class="reference external" href="method_invocation/arity0/index.html">Arity-0</a><ul>
-<li class="toctree-l3"><a class="reference external" href="method_invocation/arity0/suffix_notation.html">Suffix Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="method_invocation/index.html">Method Invocation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="method_invocation/arity0/index.html">Arity-0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="method_invocation/arity0/suffix_notation.html">Suffix Notation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="method_invocation/arity1/index.html">Arity-1</a><ul>
-<li class="toctree-l3"><a class="reference external" href="method_invocation/arity1/higher_order_functions.html">Higher-Order Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method_invocation/arity1/index.html">Arity-1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="method_invocation/arity1/higher_order_functions.html">Higher-Order Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="method_invocation/operators.html">Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method_invocation/symbolic_methods.html">Symbolic methods/Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="files/index.html">Files</a><ul>
-<li class="toctree-l2"><a class="reference external" href="files/multi_unit_files.html">Multi-Unit Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/index.html">Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="files/multi_unit_files.html">Multi-Unit Files</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="scaladoc/index.html">Scaladoc</a><ul>
-<li class="toctree-l2"><a class="reference external" href="scaladoc/index.html#general-style">General Style</a></li>
-<li class="toctree-l2"><a class="reference external" href="scaladoc/index.html#packages">Packages</a></li>
-<li class="toctree-l2"><a class="reference external" href="scaladoc/index.html#classes-objects-and-traits">Classes, Objects, and Traits</a><ul>
-<li class="toctree-l3"><a class="reference external" href="scaladoc/index.html#classes">Classes</a></li>
-<li class="toctree-l3"><a class="reference external" href="scaladoc/index.html#objects">Objects</a></li>
-<li class="toctree-l3"><a class="reference external" href="scaladoc/index.html#traits">Traits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scaladoc/index.html">Scaladoc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#general-style">General Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#packages">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#classes-objects-and-traits">Classes, Objects, and Traits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scaladoc/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scaladoc/index.html#objects">Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scaladoc/index.html#traits">Traits</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference external" href="scaladoc/index.html#methods-and-other-members">Methods and Other Members</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#methods-and-other-members">Methods and Other Members</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference external" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
+</div>
 </div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference external" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference external" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
 </ul>
 </div>
 
@@ -164,23 +169,23 @@ when alternative styles should be preferred over the ones given here.</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-            <h3><a href="">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="">Scala Style Guide</a><ul>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Scala Style Guide</a><ul>
 </ul>
 </li>
-<li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
-            <h4>Next topic</h4>
-            <p class="topless"><a href="overview.html"
-                                  title="next chapter">Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="next chapter">Overview</a></p>
 
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="sources/index.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
 <h3>Alternate Formats</h3>
 <ul>
 	<li><a href="ScalaStyleGuide.pdf">Download PDF</a></li>
@@ -190,19 +195,19 @@ when alternative styles should be preferred over the ones given here.</p>
 	<li>Visit the <a href="http://github.com/davetron5000/scala-style/">GitHub Project</a></li>
 </ul>
 
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -213,12 +218,12 @@ when alternative styles should be preferred over the ones given here.</p>
         <li class="right" style="margin-right: 10px">
           <a href="overview.html" title="Overview"
              >next</a></li>
-        <li><a href="">Scala Style Guide v1.2.7 documentation</a> &raquo;</li> 
+        <li><a href="#">Scala Style Guide v1.3.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-      &copy; Copyright 2009, Scala Community.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>

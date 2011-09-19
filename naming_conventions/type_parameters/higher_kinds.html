@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,21 +7,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Higher-Kinds &mdash; Scala Style Guide v1.2.7 documentation</title>
+    <title>Higher-Kinds and Parameterized Type parameters &mdash; Scala Style Guide v1.3.1 documentation</title>
     <link rel="stylesheet" href="../../static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.2.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '1.3.1',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
     <script type="text/javascript" src="../../static/doctools.js"></script>
-    <link rel="top" title="Scala Style Guide v1.2.7 documentation" href="../../index.html" />
+    <link rel="top" title="Scala Style Guide v1.3.1 documentation" href="../../index.html" />
     <link rel="up" title="Type Parameters (generics)" href="index.html" />
     <link rel="next" title="Type Aliases" href="../type_aliases.html" />
     <link rel="prev" title="Type Parameters (generics)" href="index.html" /> 
@@ -34,7 +37,7 @@
         <li class="right" >
           <a href="index.html" title="Type Parameters (generics)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Scala Style Guide v1.2.7 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">Scala Style Guide v1.3.1 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Naming Conventions</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Type Parameters (generics)</a> &raquo;</li> 
       </ul>
@@ -45,22 +48,24 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="higher-kinds">
-<h1>Higher-Kinds<a class="headerlink" href="#higher-kinds" title="Permalink to this headline">¶</a></h1>
-<p>While higher-kinds are theoretically no different from regular type parameters
-(except that their <a class="reference external" href="http://en.wikipedia.org/wiki/Kind_(type_theory)">kind</a> is at least <tt class="docutils literal"><span class="pre">*=&gt;*</span></tt> rather than simply <tt class="docutils literal"><span class="pre">*</span></tt>), their
-naming conventions do differ somewhat.  Generally, higher-kinded parameters are
-two upper-case characters, usually repeated.  For example:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HOMap</span><span class="o">[</span><span class="kt">AA</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">BB</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+  <div class="section" id="higher-kinds-and-parameterized-type-parameters">
+<h1>Higher-Kinds and Parameterized Type parameters<a class="headerlink" href="#higher-kinds-and-parameterized-type-parameters" title="Permalink to this headline">¶</a></h1>
+<p>Higher-kinds are theoretically no different from regular type parameters
+(except that their <a class="reference external" href="http://en.wikipedia.org/wiki/Kind_(type_theory)">kind</a> is at least <tt class="docutils literal"><span class="pre">*=&gt;*</span></tt> rather than simply <tt class="docutils literal"><span class="pre">*</span></tt>).
+The naming conventions are generally similar, however it is
+preferred to use a descriptive name rather than a single letter, for clarity:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HigherOrderMap</span><span class="o">[</span><span class="kt">Key</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Value</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 </pre></div>
 </div>
-<p>It is also (sometimes) acceptable to give full, descriptive names to higher-kinded
-parameters.  In this case, use all-caps to make it clear you are not referring
-to a class or trait.  Thus, the following would be an equally valid definition of <tt class="docutils literal"><span class="pre">HOMap</span></tt>:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HOMap</span><span class="o">[</span><span class="kt">KEY</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">VALUE</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<p>The single letter form is (sometimes) acceptble for fundamental
+concepts used throughout a codebase, such as <tt class="docutils literal"><span class="pre">F[_]</span></tt> for Functor and <tt class="docutils literal"><span class="pre">M[_]</span></tt> for Monad.</p>
+<p>In such cases, the fundamental concept should be something well known and understood
+to the team, or have tertiary evidence, such as the following:</p>
+<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">doSomething</span><span class="o">[</span><span class="kt">M</span><span class="o">[</span><span class="k">_</span><span class="o">]</span><span class="kt">:</span> <span class="kt">Monad</span><span class="o">](</span><span class="n">m</span><span class="k">:</span> <span class="kt">M</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span> <span class="k">=</span> <span class="o">...</span>
 </pre></div>
 </div>
-<p>In such cases, the type naming conventions should be observed.</p>
+<p>Here, the type bound <tt class="docutils literal"><span class="pre">:</span> <span class="pre">Monad</span></tt> offers the necessary evidence to inform the reader that
+<tt class="docutils literal"><span class="pre">M[_]</span></tt> is the type of the Monad.</p>
 </div>
 
 
@@ -69,18 +74,18 @@ to a class or trait.  Thus, the following would be an equally valid definition o
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="index.html"
-                                  title="previous chapter">Type Parameters (generics)</a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="../type_aliases.html"
-                                  title="next chapter">Type Aliases</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Type Parameters (generics)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../type_aliases.html"
+                        title="next chapter">Type Aliases</a></p>
 
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../../sources/naming_conventions/type_parameters/higher_kinds.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../sources/naming_conventions/type_parameters/higher_kinds.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
 <h3>Alternate Formats</h3>
 <ul>
 	<li><a href="../../ScalaStyleGuide.pdf">Download PDF</a></li>
@@ -90,19 +95,19 @@ to a class or trait.  Thus, the following would be an equally valid definition o
 	<li>Visit the <a href="http://github.com/davetron5000/scala-style/">GitHub Project</a></li>
 </ul>
 
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -116,14 +121,14 @@ to a class or trait.  Thus, the following would be an equally valid definition o
         <li class="right" >
           <a href="index.html" title="Type Parameters (generics)"
              >previous</a> |</li>
-        <li><a href="../../index.html">Scala Style Guide v1.2.7 documentation</a> &raquo;</li>
+        <li><a href="../../index.html">Scala Style Guide v1.3.1 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Naming Conventions</a> &raquo;</li>
           <li><a href="index.html" >Type Parameters (generics)</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-      &copy; Copyright 2009, Scala Community.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2009, Scala Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>

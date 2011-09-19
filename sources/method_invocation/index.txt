@@ -10,9 +10,20 @@ Each argument should be separated by a single space *following* the comma (``,``
     foo(42, bar)
     target.foo(42, bar)
     target.foo()
+    
+As of version 2.8, Scala now has support for named parameters.  Named parameters
+in a method invocation should be treated as regular parameters (spaced accordingly
+following the comma) with a space on either side of the equals sign::
+    
+    foo(x = 6, y = 7)
+    
+While this style does create visual ambiguity with named parameters and variable
+assignment, the alternative (no spacing around the equals sign) results in code
+which can be very difficult to read, particularly for non-trivial expressions for
+the actuals.
 
 .. toctree::
 
    arity0/index
    arity1/index
-   operators
+   symbolic_methods

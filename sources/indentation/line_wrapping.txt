@@ -11,14 +11,14 @@ practical solution.
 When it is absolutely necessary to wrap an expression across more than one line,
 each successive line should be indented two spaces from the *first*.  Also
 remember that Scala requires each "wrap line" to either have an unclosed
-parenthetical or to end with an infix binary function or operator in which the
-right parameter is not given::
+parenthetical or to end with an infix method in which the right parameter 
+is not given::
     
     val result = 1 + 2 + 3 + 4 + 5 + 6 +
       7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 +
       15 + 16 + 17 + 18 + 19 + 20
       
-Without this trailing operator, Scala will infer a semi-colon at the end of a
+Without this trailing method, Scala will infer a semi-colon at the end of a
 line which was intended to wrap, throwing off the compilation sometimes without
 even so much as a warning.
 
