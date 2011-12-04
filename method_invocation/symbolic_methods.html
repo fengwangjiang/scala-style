@@ -49,25 +49,7 @@
             
   <div class="section" id="symbolic-methods-operators">
 <h1>Symbolic methods/Operators<a class="headerlink" href="#symbolic-methods-operators" title="Permalink to this headline">¶</a></h1>
-<p>Methods with symbolic names should <em>always</em> be invoked using infix notation with
-spaces separating the target, the symbolic method and the parameter:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// right!</span>
-<span class="s">&quot;daniel&quot;</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="s">&quot;Spiewak&quot;</span>
-
-<span class="c1">// wrong!</span>
-<span class="s">&quot;daniel&quot;</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="o">+</span><span class="s">&quot;spiewak&quot;</span>
-</pre></div>
-</div>
-<p>For the most part, this idiom follows Java and Haskell syntactic conventions.</p>
-<p>Symbolic methods which take more than one parameter (they do exist!) should still be
-invoked using infix notation, delimited by spaces:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="n">foo</span> <span class="o">**</span> <span class="o">(</span><span class="n">bar</span><span class="o">,</span> <span class="n">baz</span><span class="o">)</span>
-</pre></div>
-</div>
-<p>Such methods are fairly rare, however, and should be avoided during API design.</p>
-<p>Finally, the use of the <tt class="docutils literal"><span class="pre">/:</span></tt> and <tt class="docutils literal"><span class="pre">:\</span></tt> should be avoided in preference to the more explicit
-<tt class="docutils literal"><span class="pre">foldLeft</span></tt> and <tt class="docutils literal"><span class="pre">foldRight</span></tt> method of <tt class="docutils literal"><span class="pre">Iterator</span></tt>.  The right-associativity of the <tt class="docutils literal"><span class="pre">/:</span></tt>
-can lead to extremely confusing code, at the benefit of saving a few characters.</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/method-invocation.html">http://docs.scala-lang.org/style/method-invocation.html</a></p>
 </div>
 
 

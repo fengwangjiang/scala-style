@@ -49,27 +49,7 @@
             
   <div class="section" id="ordering-of-class-elements">
 <h1>Ordering Of Class Elements<a class="headerlink" href="#ordering-of-class-elements" title="Permalink to this headline">¶</a></h1>
-<p>All class/object/trait members should be declared interleaved with newlines.
-The only exceptions to this rule are <tt class="docutils literal"><span class="pre">var</span></tt> and <tt class="docutils literal"><span class="pre">val</span></tt>.  These may be declared
-without the intervening newline, but only if none of the fields have scaladoc
-and if all of the fields have simple (max of 20-ish chars, one line) definitions:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">bar</span> <span class="k">=</span> <span class="mi">42</span>
-  <span class="k">val</span> <span class="n">baz</span> <span class="k">=</span> <span class="s">&quot;Daniel&quot;</span>
-
-  <span class="k">def</span> <span class="n">doSomething</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-
-  <span class="k">def</span> <span class="n">add</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>Fields should <em>precede</em> methods in a scope.  The only exception is if the <tt class="docutils literal"><span class="pre">val</span></tt>
-has a block definition (more than one expression) and performs operations which
-may be deemed &#8220;method-like&#8221; (e.g. computing the length of a <tt class="docutils literal"><span class="pre">List</span></tt>).  In such
-cases, the non-trivial <tt class="docutils literal"><span class="pre">val</span></tt> may be declared at a later point in the file as
-logical member ordering would dictate.  This rule <em>only</em> applies to <tt class="docutils literal"><span class="pre">val</span></tt> and
-<tt class="docutils literal"><span class="pre">lazy</span> <span class="pre">val</span></tt>!  It becomes very difficult to track changing aliases if <tt class="docutils literal"><span class="pre">var</span></tt>
-declarations are strewn throughout class file.</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/declarations.html">http://docs.scala-lang.org/style/declarations.html</a></p>
 </div>
 
 

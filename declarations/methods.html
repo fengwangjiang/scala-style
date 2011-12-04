@@ -49,26 +49,10 @@
             
   <div class="section" id="methods">
 <h1>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
-<p>Methods should be declared according to the following pattern:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">bar</span><span class="k">:</span> <span class="kt">Baz</span><span class="o">)</span><span class="k">:</span> <span class="kt">Bin</span> <span class="o">=</span> <span class="n">expr</span>
-</pre></div>
-</div>
-<p>The only exceptions to this rule are methods which return <tt class="docutils literal"><span class="pre">Unit</span></tt>.  Such methods
-should use Scala&#8217;s syntactic sugar to avoid accidentally confusing return types:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">bar</span><span class="k">:</span> <span class="kt">Baz</span><span class="o">)</span> <span class="o">{</span>       <span class="c1">// return type is Unit</span>
-  <span class="n">expr</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>Methods with default parameter values should be declared in an analogous fashion,
-with a space on either side of the equals sign:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">6</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">7</span><span class="o">)</span> <span class="k">=</span> <span class="n">expr</span>
-</pre></div>
-</div>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/declarations.html">http://docs.scala-lang.org/style/declarations.html</a></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="methods/modifiers.html">Modifiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="methods/modifiers.html#body">Body</a></li>
 <li class="toctree-l1"><a class="reference internal" href="methods/currying.html">Multiple Parameter Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="methods/higher_order_functions.html">Higher-Order Functions</a></li>
 </ul>

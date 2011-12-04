@@ -49,33 +49,7 @@
             
   <div class="section" id="curly-braces">
 <h1>Curly-Braces<a class="headerlink" href="#curly-braces" title="Permalink to this headline">¶</a></h1>
-<p>Curly-braces should be omitted in cases where the control structure represents
-a pure-functional operation and all branches of the control structure (relevant
-to <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>) are single-line expressions.  Remember the following guidelines:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">if</span></tt> - Omit braces if you have an <tt class="docutils literal"><span class="pre">else</span></tt> clause.  Otherwise, surround the
-contents with curly braces even if the contents are only a single line.</li>
-<li><tt class="docutils literal"><span class="pre">while</span></tt> - Never omit braces (<tt class="docutils literal"><span class="pre">while</span></tt> cannot be used in a pure-functional manner).</li>
-<li><tt class="docutils literal"><span class="pre">for</span></tt> - Omit braces if you have a <tt class="docutils literal"><span class="pre">yield</span></tt> clause.  Otherwise, surround the
-contents with curly-braces, even if the contents are only a single line.</li>
-<li><tt class="docutils literal"><span class="pre">case</span></tt> - Omit braces if the <tt class="docutils literal"><span class="pre">case</span></tt> expression fits on a single line.  Otherwise,
-use curly braces for clarity (even though they are not <em>required</em> by the parser).</li>
-</ul>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">news</span> <span class="k">=</span> <span class="k">if</span> <span class="o">(</span><span class="n">foo</span><span class="o">)</span>
-  <span class="n">goodNews</span><span class="o">()</span>
-<span class="k">else</span>
-  <span class="n">badNews</span><span class="o">()</span>
-
-<span class="k">if</span> <span class="o">(</span><span class="n">foo</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">&quot;foo was true&quot;</span><span class="o">)</span>
-<span class="o">}</span>
-
-<span class="n">news</span> <span class="k">match</span> <span class="o">{</span>
-  <span class="k">case</span> <span class="s">&quot;good&quot;</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Good news!&quot;</span><span class="o">)</span>
-  <span class="k">case</span> <span class="s">&quot;bad&quot;</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;Bad news!&quot;</span><span class="o">)</span>
-<span class="o">}</span>
-</pre></div>
-</div>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/control-structures.html">http://docs.scala-lang.org/style/control-structures.html</a></p>
 </div>
 
 

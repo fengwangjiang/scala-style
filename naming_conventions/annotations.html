@@ -49,20 +49,7 @@
             
   <div class="section" id="annotations">
 <h1>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h1>
-<p>Annotations, such as <tt class="docutils literal"><span class="pre">&#64;volatile</span></tt> should be in camel-case, with the first letter
-being lower case:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">cloneable</span> <span class="k">extends</span> <span class="nc">StaticAnnotation</span>
-</pre></div>
-</div>
-<p>This convention is used throughout the Scala library, even though
-it is not consistent with Java annotations.</p>
-<p>Note: This convention applied even when using type aliases on annotations.  For
-example, when using JDBC:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">type</span> <span class="kt">id</span> <span class="o">=</span> <span class="n">javax</span><span class="o">.</span><span class="n">persistence</span><span class="o">.</span><span class="nc">Id</span> <span class="nd">@annotation</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">field</span>
-<span class="nd">@id</span>
-<span class="k">var</span> <span class="n">id</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-</pre></div>
-</div>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/naming-conventions.html">http://docs.scala-lang.org/style/naming-conventions.html</a></p>
 </div>
 
 

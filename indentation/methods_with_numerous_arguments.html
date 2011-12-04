@@ -49,41 +49,7 @@
             
   <div class="section" id="methods-with-numerous-arguments">
 <h1>Methods with Numerous Arguments<a class="headerlink" href="#methods-with-numerous-arguments" title="Permalink to this headline">¶</a></h1>
-<p>When calling a method which takes numerous arguments (in the range of five or
-more), it is often necessary to wrap the method invocation onto multiple lines.
-In such cases, put all arguments on a line by themselves, indented two spaces
-from the current indent level:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="n">foo</span><span class="o">(</span>
-  <span class="n">someVeryLongFieldName</span><span class="o">,</span>
-  <span class="n">andAnotherVeryLongFieldName</span><span class="o">,</span>
-  <span class="s">&quot;this is a string&quot;</span><span class="o">,</span>
-  <span class="mf">3.1415</span><span class="o">)</span>
-</pre></div>
-</div>
-<p>This way, all parameters line up, but you don&#8217;t need to re-align them if
-you change the name of the method later on.</p>
-<p>Great care should be taken to avoid these sorts of invocations well into the
-length of the line.  More specifically, such an invocation should be avoided
-when each parameter would have to be indented more than 50 spaces to achieve
-alignment.  In such cases, the invocation itself should be moved to the next
-line and indented two spaces:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// right!</span>
-<span class="k">val</span> <span class="n">myOnerousAndLongFieldNameWithNoRealPoint</span> <span class="k">=</span>
-  <span class="n">foo</span><span class="o">(</span>
-    <span class="n">someVeryLongFieldName</span><span class="o">,</span>
-    <span class="n">andAnotherVeryLongFieldName</span><span class="o">,</span>
-    <span class="s">&quot;this is a string&quot;</span><span class="o">,</span>
-    <span class="mf">3.1415</span><span class="o">)</span>
-
-<span class="c1">// wrong!</span>
-<span class="k">val</span> <span class="n">myOnerousAndLongFieldNameWithNoRealPoint</span> <span class="k">=</span> <span class="n">foo</span><span class="o">(</span><span class="n">someVeryLongFieldName</span><span class="o">,</span>
-                                                   <span class="n">andAnotherVeryLongFieldName</span><span class="o">,</span>
-                                                   <span class="s">&quot;this is a string&quot;</span><span class="o">,</span>
-                                                   <span class="mf">3.1415</span><span class="o">)</span>
-</pre></div>
-</div>
-<p>Better yet, just try to avoid any method which takes more than two or three
-parameters!</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/indentation.html">http://docs.scala-lang.org/style/indentation.html</a></p>
 </div>
 
 

@@ -49,38 +49,7 @@
             
   <div class="section" id="type-parameters-generics">
 <h1>Type Parameters (generics)<a class="headerlink" href="#type-parameters-generics" title="Permalink to this headline">¶</a></h1>
-<p>For simple type parameters, a single upper-case letter (from the English
-alphabet) should be used, starting with <tt class="docutils literal"><span class="pre">A</span></tt> (this is different
-than the Java convention of starting with <tt class="docutils literal"><span class="pre">T</span></tt>).  For example:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">...</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>If the type parameter has a more specific meaning, a descriptive name
-should be used, following the class naming conventions (as opposed
-to an all-uppercase style):</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// Right</span>
-<span class="k">class</span> <span class="nc">Map</span><span class="o">[</span><span class="kt">Key</span>,<span class="kt">Value</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">get</span><span class="o">(</span><span class="n">key</span><span class="k">:</span><span class="kt">Key</span><span class="o">)</span><span class="k">:</span><span class="kt">Value</span>
-  <span class="k">def</span> <span class="n">put</span><span class="o">(</span><span class="n">key</span><span class="k">:</span><span class="kt">Key</span><span class="o">,</span><span class="n">value</span><span class="k">:</span><span class="kt">Value</span><span class="o">)</span><span class="k">:</span><span class="kt">Unit</span>
-<span class="o">}</span>
-
-<span class="c1">// Wrong; don&#39;t use all-caps</span>
-<span class="k">class</span> <span class="nc">Map</span><span class="o">[</span><span class="kt">KEY</span>,<span class="kt">VALUE</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">get</span><span class="o">(</span><span class="n">key</span><span class="k">:</span><span class="kt">KEY</span><span class="o">)</span><span class="k">:</span><span class="kt">VALUE</span>
-  <span class="k">def</span> <span class="n">put</span><span class="o">(</span><span class="n">key</span><span class="k">:</span><span class="kt">KEY</span><span class="o">,</span><span class="n">value</span><span class="k">:</span><span class="kt">VALUE</span><span class="o">)</span><span class="k">:</span><span class="kt">Unit</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>If the scope of the type parameter is small enough, a mnemonic can
-be used in place of a longer, descriptive name:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Map</span><span class="o">[</span><span class="kt">K</span>,<span class="kt">V</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">get</span><span class="o">(</span><span class="n">key</span><span class="k">:</span><span class="kt">K</span><span class="o">)</span><span class="k">:</span><span class="kt">V</span>
-  <span class="k">def</span> <span class="n">put</span><span class="o">(</span><span class="n">key</span><span class="k">:</span><span class="kt">K</span><span class="o">,</span><span class="n">value</span><span class="k">:</span><span class="kt">V</span><span class="o">)</span><span class="k">:</span><span class="kt">Unit</span>
-<span class="o">}</span>
-</pre></div>
-</div>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/naming-conventions.html">http://docs.scala-lang.org/style/naming-conventions.html</a></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="higher_kinds.html">Higher-Kinds and Parameterized Type parameters</a></li>

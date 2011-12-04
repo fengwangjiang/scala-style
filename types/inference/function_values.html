@@ -50,17 +50,7 @@
             
   <div class="section" id="function-values">
 <h1>Function Values<a class="headerlink" href="#function-values" title="Permalink to this headline">¶</a></h1>
-<p>Function values support a special case of type inference which is worth calling
-out on its own:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">val</span> <span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="o">...</span>
-<span class="n">ls</span> <span class="n">map</span> <span class="o">{</span> <span class="n">str</span> <span class="k">=&gt;</span> <span class="n">str</span><span class="o">.</span><span class="n">toInt</span> <span class="o">}</span>
-</pre></div>
-</div>
-<p>In cases where Scala already knows the type of the function value we are declaring,
-there is no need to annotate the parameters (in this case, <tt class="docutils literal"><span class="pre">str</span></tt>).  This is an
-intensely helpful inference and should be preferred whenever possible.  Note that
-implicit conversions which operate on function values will nullify this inference,
-forcing the explicit annotation of parameter types.</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/types.html">http://docs.scala-lang.org/style/types.html</a></p>
 </div>
 
 

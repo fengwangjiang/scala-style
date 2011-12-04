@@ -49,49 +49,7 @@
             
   <div class="section" id="comprehensions">
 <h1>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h1>
-<p>Scala has the ability to represent <tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions with more than one
-generator (usually, more than one <tt class="docutils literal"><span class="pre">&lt;-</span></tt> symbol).  In such cases, there are two
-alternative syntaxes which may be used:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
-<span class="k">for</span> <span class="o">(</span><span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span><span class="o">;</span> <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span><span class="o">)</span>
-  <span class="k">yield</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
-
-<span class="c1">// right!</span>
-<span class="k">for</span> <span class="o">{</span>
-  <span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span>
-  <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span>
-<span class="o">}</span> <span class="k">yield</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
-</pre></div>
-</div>
-<p>While the latter style is more verbose, it is generally considered easier to read
-and more &#8220;scalable&#8221; (meaning that it does not become obfuscated as the complexity
-of the comprehension increases).  You should prefer this form for all
-<tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions of more than one generator.  Comprehensions with only a
-single generator (e.g. <tt class="docutils literal"><span class="pre">for</span> <span class="pre">(i</span> <span class="pre">&lt;-</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">10)</span> <span class="pre">yield</span> <span class="pre">i</span></tt>) should use the first
-form (parentheses rather than curly braces).</p>
-<p>The exceptions to this rule are <tt class="docutils literal"><span class="pre">for</span></tt>-comprehensions which lack a <tt class="docutils literal"><span class="pre">yield</span></tt>
-clause.  In such cases, the construct is actually a loop rather than a functional
-comprehension and it is usually more readable to string the generators together
-between parentheses rather than using the syntactically-confusing <tt class="docutils literal"><span class="pre">}</span> <span class="pre">{</span></tt>
-construct:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// wrong!</span>
-<span class="k">for</span> <span class="o">{</span>
-  <span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span>
-  <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span>
-<span class="o">}</span> <span class="o">{</span>
-  <span class="n">printf</span><span class="o">(</span><span class="s">&quot;(%d, %d)&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
-<span class="o">}</span>
-
-<span class="c1">// right!</span>
-<span class="k">for</span> <span class="o">(</span><span class="n">x</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">rows</span><span class="o">;</span> <span class="n">y</span> <span class="k">&lt;-</span> <span class="n">board</span><span class="o">.</span><span class="n">files</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">printf</span><span class="o">(</span><span class="s">&quot;(%d, %d)&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>Finally, <tt class="docutils literal"><span class="pre">for</span></tt> comprehensions are preferred to chained calls to
-<tt class="docutils literal"><span class="pre">map</span></tt>, <tt class="docutils literal"><span class="pre">flatMap</span></tt>, and <tt class="docutils literal"><span class="pre">filter</span></tt>, as this can get difficult
-to read (this is one of the purposes of the enhanced <tt class="docutils literal"><span class="pre">for</span></tt>
-comprehension).</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/control-structures.html">http://docs.scala-lang.org/style/control-structures.html</a></p>
 </div>
 
 

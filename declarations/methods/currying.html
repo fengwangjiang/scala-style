@@ -50,47 +50,7 @@
             
   <div class="section" id="multiple-parameter-lists">
 <h1>Multiple Parameter Lists<a class="headerlink" href="#multiple-parameter-lists" title="Permalink to this headline">¶</a></h1>
-<p>In general, you should only use multiple parameter lists if there is a good reason to do so.
-These methods (or similarly declared functions) have a more verbose declaration and invocation syntax and are
-harder for less-experienced Scala developers to understand.</p>
-<p>There are three main reasons you should do this:</p>
-<ol class="arabic">
-<li><p class="first">For a fluent API</p>
-<p>Multiple parameter lists allow you to create your own &#8220;control structures&#8221;:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">unless</span><span class="o">(</span><span class="n">exp</span><span class="k">:</span><span class="kt">Boolean</span><span class="o">)(</span><span class="n">code</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span> <span class="k">=</span> <span class="k">if</span> <span class="o">(!</span><span class="n">exp</span><span class="o">)</span> <span class="n">code</span>
-<span class="n">unless</span><span class="o">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">&quot;x was not less than five&quot;</span><span class="o">)</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Implicit Parameters</p>
-<p>When using implicit parameters, and you use the <tt class="docutils literal"><span class="pre">implicit</span></tt> keyword, it applies to the entire parameter list.
-Thus, if you want only some parameters to be impicit, you must use multiple parameter lists.</p>
-</li>
-<li><p class="first">For type inference</p>
-<p>When invoking a method using only some of the parameter lists, the type inferencer can
-allow a simpler syntax when invoking the remaining parameter lists.  Consider fold:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foldLeft</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">z</span><span class="k">:</span><span class="kt">B</span><span class="o">)(</span><span class="n">op</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span><span class="kt">B</span>
-<span class="nc">List</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">).</span><span class="n">foldLeft</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="k">_</span> <span class="o">+</span> <span class="n">_</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
-
-<span class="c1">// If, instead:</span>
-<span class="k">def</span> <span class="n">foldLeft</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">z</span><span class="k">:</span> <span class="kt">B</span><span class="o">,</span> <span class="n">op</span><span class="k">:</span> <span class="o">(</span><span class="kt">B</span><span class="o">,</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">B</span>
-<span class="c1">// above won&#39;t work, you must specify types</span>
-<span class="nc">List</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">).</span><span class="n">foldLeft</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="o">(</span><span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
-<span class="nc">List</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">).</span><span class="n">foldLeft</span><span class="o">[</span><span class="kt">Int</span><span class="o">](</span><span class="mi">0</span><span class="o">,</span> <span class="k">_</span> <span class="o">+</span> <span class="n">_</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p>For complex DSLs, or with type-names that are long, it can be difficult to fit the entire signature on one line.  In those cases,
-alight the open-paren of the parameter lists, one list per line (i.e. if you can&#8217;t put them all on one line, put one each per
-line):</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">protected</span> <span class="k">def</span> <span class="n">forResource</span><span class="o">(</span><span class="n">resourceInfo</span><span class="k">:</span><span class="kt">Any</span><span class="o">)</span>
-                         <span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">JsonNode</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="nc">Any</span><span class="o">)</span>
-                         <span class="o">(</span><span class="k">implicit</span> <span class="n">urlCreator</span><span class="k">:</span> <span class="kt">URLCreator</span><span class="o">,</span> <span class="n">configurer</span><span class="k">:</span> <span class="kt">OAuthConfiguration</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
-</pre></div>
-</div>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/declarations.html">http://docs.scala-lang.org/style/declarations.html</a></p>
 </div>
 
 

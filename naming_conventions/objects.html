@@ -49,23 +49,7 @@
             
   <div class="section" id="objects">
 <h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h1>
-<p>Objects follow the class naming convention (camelCase with a capital first letter)
-except when attempting to mimic a package or a function.  These situations don&#8217;t happen often, but
-can be expected in general development.:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">object</span> <span class="nc">ast</span> <span class="o">{</span>
-  <span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Expr</span>
-
-  <span class="k">case</span> <span class="k">class</span> <span class="nc">Plus</span><span class="o">(</span><span class="n">e1</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">,</span> <span class="n">e2</span><span class="k">:</span> <span class="kt">Expr</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Expr</span>
-  <span class="o">...</span>
-<span class="o">}</span>
-
-<span class="k">object</span> <span class="nc">inc</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>In <em>all</em> other cases, objects should be named according to the class naming
-convention.</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/naming-conventions.html">http://docs.scala-lang.org/style/naming-conventions.html</a></p>
 </div>
 
 

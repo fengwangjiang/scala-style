@@ -49,22 +49,7 @@
             
   <div class="section" id="arity-0">
 <h1>Arity-0<a class="headerlink" href="#arity-0" title="Permalink to this headline">¶</a></h1>
-<p>Scala allows the omission of parentheses on methods of arity-0 (no arguments):</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="n">reply</span><span class="o">()</span>
-
-<span class="c1">// is the same as</span>
-
-<span class="n">reply</span>
-</pre></div>
-</div>
-<p>However, this syntax should <em>only</em> be used when the method in question has no
-side-effects (purely-functional).  In other words, it would be acceptable to
-omit parentheses when calling <tt class="docutils literal"><span class="pre">queue.size</span></tt>, but not when calling <tt class="docutils literal"><span class="pre">println()</span></tt>.
-This convention mirrors the method declaration convention given above.</p>
-<p>Religiously observing this convention will <em>dramatically</em> improve code readability
-and will make it much easier to understand at a glance the most basic operation
-of any given method.  Resist the urge to omit parentheses simply to save two
-characters!</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/method-invocation.html">http://docs.scala-lang.org/style/method-invocation.html</a></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="suffix_notation.html">Suffix Notation</a></li>

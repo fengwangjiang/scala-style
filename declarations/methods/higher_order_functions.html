@@ -50,24 +50,7 @@
             
   <div class="section" id="higher-order-functions">
 <h1>Higher-Order Functions<a class="headerlink" href="#higher-order-functions" title="Permalink to this headline">¶</a></h1>
-<p>It&#8217;s worth keeping in mind when declaring higher-order functions the fact that
-Scala allows a somewhat nicer syntax for such functions at call-site when the
-function parameter is curried as the last argument.  For example, this is the
-<tt class="docutils literal"><span class="pre">foldl</span></tt> function in SML:</p>
-<div class="highlight-scala"><pre>fun foldl (f: ('b * 'a) -&gt; 'b) (init: 'b) (ls: 'a list) = ...</pre>
-</div>
-<p>In Scala, the preferred style is the exact inverse:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foldLeft</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">ls</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">init</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">B</span><span class="o">,</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">B</span><span class="o">)</span> <span class="k">=</span> <span class="o">...</span>
-</pre></div>
-</div>
-<p>By placing the function parameter <em>last</em>, we have enabled invocation syntax like
-the following:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="n">foldLeft</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">))(</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span> <span class="k">_</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>
-</pre></div>
-</div>
-<p>The function value in this invocation is not wrapped in parentheses; it is
-syntactically quite disconnected from the function itself (<tt class="docutils literal"><span class="pre">foldLeft</span></tt>).  This
-style is preferred for its brevity and cleanliness.</p>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/declarations.html">http://docs.scala-lang.org/style/declarations.html</a></p>
 </div>
 
 

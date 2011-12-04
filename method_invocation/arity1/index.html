@@ -49,26 +49,7 @@
             
   <div class="section" id="arity-1">
 <h1>Arity-1<a class="headerlink" href="#arity-1" title="Permalink to this headline">¶</a></h1>
-<p>Scala has a special syntax for invoking methods of arity-1 (one argument):</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="n">names</span><span class="o">.</span><span class="n">mkString</span><span class="o">(</span><span class="s">&quot;,&quot;</span><span class="o">)</span>
-
-<span class="c1">// is the same as</span>
-
-<span class="n">names</span> <span class="n">mkString</span> <span class="s">&quot;,&quot;</span>
-</pre></div>
-</div>
-<p>This syntax is formally known as &#8220;infix notation&#8221;.  It should <em>only</em> be used for
-purely-functional methods (methods with no side-effects) - such as <tt class="docutils literal"><span class="pre">mkString</span></tt> -
-or methods which take functions as parameters - such as <tt class="docutils literal"><span class="pre">foreach</span></tt>:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// right!</span>
-<span class="n">names</span> <span class="n">foreach</span> <span class="o">{</span> <span class="n">n</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">}</span>
-<span class="n">names</span> <span class="n">mkString</span> <span class="s">&quot;,&quot;</span>
-<span class="n">optStr</span> <span class="n">getOrElse</span> <span class="s">&quot;&lt;empty&gt;&quot;</span>
-
-<span class="c1">// wrong!</span>
-<span class="n">javaList</span> <span class="n">add</span> <span class="n">item</span>
-</pre></div>
-</div>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/method-invocation.html">http://docs.scala-lang.org/style/method-invocation.html</a></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="higher_order_functions.html">Higher-Order Functions</a></li>

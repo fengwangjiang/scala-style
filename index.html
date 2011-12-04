@@ -43,13 +43,9 @@
             
   <div class="section" id="scala-style-guide">
 <h1>Scala Style Guide<a class="headerlink" href="#scala-style-guide" title="Permalink to this headline">¶</a></h1>
-<p>In lieu of an official style guide from EPFL, or even an unofficial guide from
-a community site like Artima, this document is intended to outline some basic
-Scala stylistic guidelines which should be followed with more or less fervency.
-Wherever possible, this guide attempts to detail <em>why</em> a particular style is
-encouraged and how it relates to other alternatives. As with all style guides,
-treat this document as a list of rules to be broken. There are certainly times
-when alternative styles should be preferred over the ones given here.</p>
+<p>The style guide has been adopted by the maintainers of Scala.  You can read it
+online at <a class="reference external" href="http://docs.scala-lang.org/style">http://docs.scala-lang.org/style</a> and the source can be forked
+from <a class="reference external" href="https://github.com/scala/scala.github.com">https://github.com/scala/scala.github.com</a></p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -62,10 +58,7 @@ when alternative styles should be preferred over the ones given here.</p>
 <li class="toctree-l1"><a class="reference internal" href="naming_conventions/index.html">Naming Conventions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="naming_conventions/classes_traits.html">Classes/Traits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="naming_conventions/objects.html">Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="naming_conventions/packages.html">Packages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="naming_conventions/packages.html#versions-prior-to-2-8">Versions Prior to 2.8</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="naming_conventions/packages.html">Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="naming_conventions/methods/index.html">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="naming_conventions/methods/accessors_mutators.html">Accessors/Mutators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="naming_conventions/methods/parentheses.html">Parentheses</a></li>
@@ -103,17 +96,16 @@ when alternative styles should be preferred over the ones given here.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="declarations/index.html">Declarations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="declarations/index.html#classes">Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="declarations/ordering.html">Ordering Of Class Elements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="declarations/methods.html">Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="declarations/fields.html">Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="declarations/ordering.html">Ordering Of Class Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="declarations/methods.html">Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="declarations/methods/modifiers.html">Modifiers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="declarations/methods/currying.html">Multiple Parameter Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="declarations/methods/higher_order_functions.html">Higher-Order Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="declarations/index.html#function-values">Function Values</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="declarations/function_values/spacing.html">Spacing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="declarations/function_values/multi_expression_functions.html">Multi-Expression Functions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="declarations/fields.html">Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="declarations/function_values/spacing.html">Spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="declarations/function_values/multi_expression_functions.html">Multi-Expression Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="control_structures/index.html">Control Structures</a><ul>
@@ -138,18 +130,7 @@ when alternative styles should be preferred over the ones given here.</p>
 <li class="toctree-l2"><a class="reference internal" href="files/multi_unit_files.html">Multi-Unit Files</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="scaladoc/index.html">Scaladoc</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#general-style">General Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#packages">Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#classes-objects-and-traits">Classes, Objects, and Traits</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scaladoc/index.html#classes">Classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="scaladoc/index.html#objects">Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="scaladoc/index.html#traits">Traits</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scaladoc/index.html#methods-and-other-members">Methods and Other Members</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="scaladoc/index.html">Scaladoc</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>

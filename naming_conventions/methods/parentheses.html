@@ -50,46 +50,7 @@
             
   <div class="section" id="parentheses">
 <h1>Parentheses<a class="headerlink" href="#parentheses" title="Permalink to this headline">¶</a></h1>
-<p>Unlike Ruby, Scala attaches significance to whether or not a method is <em>declared</em>
-with parentheses (only applicable to methods of <a class="reference external" href="http://en.wikipedia.org/wiki/Arity">arity</a>-0).  For example:</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="k">def</span> <span class="n">foo1</span><span class="o">()</span> <span class="k">=</span> <span class="o">...</span>
-
-<span class="k">def</span> <span class="n">foo2</span> <span class="k">=</span> <span class="o">...</span>
-</pre></div>
-</div>
-<p>These are different methods at compile-time.  While <tt class="docutils literal"><span class="pre">foo1</span></tt> can be
-called with or without the parentheses, <tt class="docutils literal"><span class="pre">foo2</span></tt> <em>may not</em> be called
-<em>with</em> parentheses.</p>
-<p>Thus, it is actually quite important that proper guidelines be observed regarding
-when it is appropriate to declare a method without parentheses and when it is
-not.</p>
-<p>Methods which act as accessors of any sort (either encapsulating a field or a
-logical property) should be declared <em>without</em> parentheses except if they have side effects.
-While Ruby and Lift use a <tt class="docutils literal"><span class="pre">!</span></tt> to indicate this, the usage of parens is preferred <a class="footnote-reference" href="#dsl-note" id="id1">[1]</a>.</p>
-<p>Further, the callsite should follow the declaration; if declared with parentheses,
-call with parentheses.  While there is temptation to save a few characters,
-if you follow this guideline, your code will be <em>much</em> more readable and
-maintainable.</p>
-<div class="highlight-scala"><div class="highlight"><pre><span class="c1">// doesn&#39;t change state, call as birthdate</span>
-<span class="k">def</span> <span class="n">birthdate</span> <span class="k">=</span> <span class="n">firstName</span>
-
-<span class="c1">// updates our internal state, call as age()</span>
-<span class="k">def</span> <span class="n">age</span><span class="o">()</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="nc">_age</span> <span class="k">=</span> <span class="n">updateAge</span><span class="o">(</span><span class="n">birthdate</span><span class="o">)</span>
-  <span class="nc">_age</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="dsl-note" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Please note that fluid APIs and internal domain-specific languages have a
-tendency to break the guidelines given below for the sake of syntax.  Such
-exceptions should not be considered a violation so much as a time when these
-rules do not apply.  In a DSL, syntax should be paramount over convention.</td></tr>
-</tbody>
-</table>
+<p>Moved to <a class="reference external" href="http://docs.scala-lang.org/style/naming-conventions.html">http://docs.scala-lang.org/style/naming-conventions.html</a></p>
 </div>
 
 
